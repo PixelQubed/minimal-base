@@ -1,22 +1,20 @@
-using System;
-using System.Linq;
 using Sandbox;
 
-namespace GamemodeName
+namespace MinimalBase
 {
 	public class Player : Sandbox.Player
 	{
-		ClothingContainer Clothing { get; } = new();
-
 		public Player()
 		{
-			
+
 		}
-		
+
 		public Player( Client cl )
 		{
 			Clothing.LoadFromClient( cl );
 		}
+		
+		ClothingContainer Clothing { get; } = new();
 
 		public override void Respawn()
 		{
@@ -32,10 +30,8 @@ namespace GamemodeName
 			EnableDrawing = true;
 			EnableHideInFirstPerson = true;
 			EnableShadowInFirstPerson = true;
-        
+
 			base.Respawn();
 		}
-		
 	}
-	
 }
